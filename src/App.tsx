@@ -1,6 +1,7 @@
 import stylex from "@stylexjs/stylex";
 import React from "react";
 import "./App.css";
+import { Button } from "./components/Button";
 
 interface Styles {
   heading: {
@@ -25,7 +26,10 @@ const styles: Styles = stylex.create({
 function App() {
   return (
     <>
-      <h4 {...stylex.props(styles.heading)}>Heading For Stylex</h4>
+      <h4 {...stylex.props(styles.heading, styles.active)}>
+        Heading For Stylex
+      </h4>
+      <Button>Button</Button>
     </>
   );
 }
