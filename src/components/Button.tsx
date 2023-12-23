@@ -1,6 +1,5 @@
-import React from "react";
 import stylex from "@stylexjs/stylex";
-
+import React from "react";
 
 const BUTTON_STYLES = stylex.create({
   base: {
@@ -21,5 +20,10 @@ const BUTTON_STYLES = stylex.create({
 });
 
 export const Button = ({ variant = "primary", isLarge = false, ...props }) => {
-  return <button {...stylex.props(BUTTON_STYLES.base)} {...props} />;
+  return (
+    <button
+      {...stylex.props(BUTTON_STYLES.base, BUTTON_STYLES[variant])}
+      {...props}
+    />
+  );
 };
